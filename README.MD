@@ -41,7 +41,7 @@
 - 싱글톤 과다 사용 → 의존성 주입으로 개선
 - ViewController 역할 과다 → 책임 분리 필요
 
-→ 위 피드백을 반영하여 [ClipKit](https://github.com/jungseok-corine/ClipKit) 프로젝트 진행 중
+→ 위 피드백을 반영하여 [ClipKit](https://github.com/jungseok-corine/ClipKit) 프로젝트 진행 완료
 
 ---
 
