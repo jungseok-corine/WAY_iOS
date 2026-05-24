@@ -56,6 +56,7 @@ class FeedsViewController: UIViewController {
     private func setupBindings() {
         viewModel.onFeedsDataFetched = { [weak self] in
             DispatchQueue.main.async {
+                self.hideLoadingFooter()
                 let isEmpty = self?.viewModel.displayFeedContent.isEmpty ?? true
                 self?.feedsView.isHidden = isEmpty
                 self?.noFeedsView.isHidden = !isEmpty
@@ -283,11 +284,6 @@ extension FeedsViewController: UITableViewDelegate, UITableViewDataSource {
         if maximumOffset < currentOffset {
             showLoadingFooter()
             viewModel.fetchFeeds()
-            
-            // 예시로 로딩 사라지게
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.hideLoadingFooter()
-            }
         }
     }
 }

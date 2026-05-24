@@ -49,7 +49,9 @@ class FeedViewModel {
     // MARK: - Helpers
     func fetchFeeds() {
         print("DEBUG: 피드 데이터 리스트 불러오는중,,,")
-
+        guard !isLoading else { return }  // 중복 요청 차단
+        isLoading = true
+        
         getFeedListUseCase.execute(page: page) { [weak self] result in
             guard let self = self else { return }
             self.isLoading = false
