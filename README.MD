@@ -1,4 +1,49 @@
+# WAY (Where Are You) - iOS
 
+> 본 레포지토리는 팀 프로젝트 중 iOS 파트 담당 코드입니다.
+
+## 개발자 역할
+- **담당:** iOS 앱 개발 (iOS 팀 2명 중 1명, 약 65% 기여)
+- **기간:** 2024.06 ~ 2025.02 (약 8개월)
+- **주요 기술:** UIKit, MVVM, Alamofire
+
+## 주요 구현 기능 (본인 담당)
+
+### 1. 로그인 & 인증
+- 카카오/애플 소셜 로그인 구현
+- 토큰 기반 인증 처리
+- 자동 로그인
+
+### 2. 메인 피드 (홈)
+- 함께한 추억 타임라인 조회
+- 다가오는 일정 요약
+- 무한 스크롤 구현
+
+### 3. 추억 공유 피드
+- 피드 작성 (이미지 업로드, 위치 태그)
+- 피드 목록 조회 (무한 스크롤)
+- 이미지 업로드 (Multipart/form-data)
+
+### 4. 마이페이지
+- 프로필 조회 및 수정
+- 위치 즐겨찾기 기능
+- 설정 화면
+
+### 5. RESTful API 연동
+- Alamofire 기반 네트워크 레이어 구현
+- Response 모델링 및 에러 핸들링
+
+
+## 개선 사항
+코드 리뷰 결과 아키텍처 개선이 필요하다는 피드백을 받았습니다:
+- DI Container 부재 → 다음 프로젝트에서 Swinject 적용
+- 클로저 기반 비동기 → async/await 전환 예정
+- 싱글톤 과다 사용 → 의존성 주입으로 개선
+- ViewController 역할 과다 → 책임 분리 필요
+
+→ 위 피드백을 반영하여 [ClipKit](https://github.com/jungseok-corine/ClipKit) 프로젝트 진행 완료
+
+---
 
 
 
@@ -47,9 +92,8 @@
 1. 메인 홈(함께한 추억 확인 및 일정 확인) ♾
 2. 공유 일정 🆙
 3. 친구 기능 💬
-4. 친구 위치 확인 및 채팅 🔍
-5. 추억 공유 피드 🗓
-6. 회원 정보 조회 🚦
+4. 추억 공유 피드 🗓
+5. 회원 정보 조회 🚦
 
 <br>
 
@@ -60,8 +104,6 @@
 | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/594d281b-8c16-43a2-9f83-829ea59fa712" width="230" height="500" />  | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/28154d95-e33e-4604-af4f-1afc09719d64" width="230" height="500" />  | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/682aa899-b63c-430d-a40e-b91359f70e04" width="230" height="500" /> |
 | **친구 목록** | **친구 추가** | **친구 관리** |
 | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/686eab49-ede6-4130-a3e8-1eed3dbfa2a0" width="230" height="500" />  | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/1ca8a308-a740-4d40-8bf0-b42787ba0c91" width="230" height="500" />  | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/53bc895c-c802-450d-b832-752bcba96f82" width="230" height="500" /> |
-| **실시간 채팅(1)** | **실시간 채팅(2)** | **친구 위치 확인** |
-| <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/f26ff1ee-7172-4a32-901e-f7fda85d7efa" width="230" height="500" />  | <img src ="https://github.com/WhereAreYouPJ/.github/assets/103410386/78752a4d-df4e-411d-8b6a-9e3f704a1636" width="230" height="500" />  | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/f9fc1b06-89b0-490c-b134-15cac4331e47" width="230" height="500" /> |
 | **추억공유 메인 피드** | **새 피드 작성** | **새 피드 작성 완료 페이지** |
 | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/a8711f64-3a76-4ba7-b6f4-be081e3c0a8d" width="230" height="500" />  | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/6cbe9270-9597-43c6-a288-081b5e976ce4" width="230" height="500" />  | <img src ="https://github.com/FootballManagementMSA/.github/assets/103410386/f65efae3-50b9-4b90-b56d-87123edd6e9e" width="230" height="600" /> |
 | **마이페이지** | **위치 즐겨찾기(1)** | **위치 즐겨찾기(2)** |
